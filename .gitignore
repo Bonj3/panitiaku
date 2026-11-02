@@ -1,0 +1,54 @@
+PROJECT.md
+docs
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment (jangan pernah commit secret)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local test/check output (regenerate when needed)
+coverage-*.txt
+backend/coverage-run.txt
+frontend/test_out_err.txt
+
+# Test & coverage
+coverage/
+.nyc_output/
+
+# Editor & OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Prisma
+backend/src/generated/prisma/
+
+# Tooling cache
+.cache/
+.turbo/
+.eslintcache
+
+.opencode
+opencode.jsonc

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: event-committee-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: event_committee
+    ports:
+      # Host 5433 agar tidak bentrok dengan PostgreSQL lokal (5432) di mesin dev ini.
+      - "5433:5432"
+    volumes:
+      - event_committee_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d event_committee"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  event_committee_pgdata:
